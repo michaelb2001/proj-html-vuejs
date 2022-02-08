@@ -91,15 +91,17 @@ img {
   user-select: none;
   transform: rotateZ(90deg);
   background-color: $header-text-color;
+  width: 80px;
+  text-align: center;
 }
 
 .next {
-  right: 0%!important;
+  right: -1%!important;
   border-radius: 0 0 50% 50%!important;
 }
 
 .prev {
-  left: 0%!important;
+  left: -1%!important;
   border-radius: 50% 50% 0 0!important;
 }
 
