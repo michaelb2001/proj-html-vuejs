@@ -3,8 +3,8 @@
  <div>
     <transition-group name="fade" tag="div">
       <div v-for="(i,index) in caption" :key="index" class="motto d-flex flex-column align-items-center justify-content-center rtext">
-            <h3>{{i[currentIndex].motto}}</h3>
-            <p>{{i[currentIndex].sub_motto}}</p>
+            <h3>{{i[this.currentIndex].motto}}</h3>
+            <p>{{i[this.currentIndex].sub_motto}}</p>
       </div>
     </transition-group>
     <a class="prev" @click="prev" href="#">Pre</a>
