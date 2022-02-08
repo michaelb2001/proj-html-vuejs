@@ -27,13 +27,23 @@
             <a href=""><i class="fas fa-search"></i>Search </a>
         </div>
     </div>
+
+    <Slider :images="arrayPassato" />
 </div>
   
 </template>
 
 <script>
+import Slider from './commons/Slider.vue';
 export default {
+    
     name:"Header",
+    components:{
+        Slider
+    },
+    props:{
+        arrayPassato :Array
+    }, 
     data(){
         return{
             logo:require('../assets/img/h5-logo-divided-header.png'),
@@ -58,7 +68,7 @@ export default {
 
 .container-fluid{
     background-color: $header-color;
-    
+    padding: 20px;
     .container{
         height: 100px;
         .icon{
