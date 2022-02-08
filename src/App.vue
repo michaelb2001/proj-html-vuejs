@@ -2,17 +2,20 @@
   <div id="app">
       <Header :arrayPassato="sliderImg1" 
               :arrayPizzaPassato="sliderImg1Pizza" />
+      <Main />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import Main from './components/Main.vue';
 
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Main
   },
   data(){
     return{
