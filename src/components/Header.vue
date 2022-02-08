@@ -27,8 +27,7 @@
             <a href=""><i class="fas fa-search"></i>Search </a>
         </div>
     </div>
-
-    <Slider :images="arrayPassato" />
+    <Slider :images="arrayPassato" :imagesPizza="arrayPizzaPassato"/>
 </div>
   
 </template>
@@ -42,7 +41,8 @@ export default {
         Slider
     },
     props:{
-        arrayPassato :Array
+        arrayPassato :Array,
+        arrayPizzaPassato: Array
     }, 
     data(){
         return{

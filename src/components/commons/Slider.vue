@@ -2,21 +2,27 @@
 <div class="container-fluid">
  <div>
     <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i" class="d-flex align-items-center justify-content-center">
-        <img :src="currentImg" />
+      <div v-for="i in imagesPizza" :key="i" class="d-flex align-items-center justify-content-center">
+        <img class="z_index" :src="currentImgPizza" />
+      </div>
+
+      <div v-for="(i,index) in images" :key="index" class="d-flex align-items-center justify-content-center">
+        <img class="sfondo" :src="currentImg" />
       </div>
     </transition-group>
-    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-    <a class="next" @click="next" href="#">&#10095; Next</a>
+    <a class="prev" @click="prev" href="#">Pre</a>
+    <a class="next" @click="next" href="#"> Next</a>
   </div>
 </div>
  
 </template>
+
 <script>
 export default {
   name: "Slider",
   props: {
-      images : Array
+      images : Array,
+      imagesPizza : Array
   },
   data() {
     return {
@@ -45,6 +51,9 @@ export default {
   computed: {
     currentImg: function() {
       return this.images[Math.abs(this.currentIndex) % this.images.length];
+    },
+    currentImgPizza: function(){
+      return this.imagesPizza[Math.abs(this.currentIndex) % this.imagesPizza.length];
     }
   }
 };
@@ -54,6 +63,7 @@ export default {
 @import '../../assets/style/vars.scss';
 .container-fluid{
     background-color: $header-color;
+    min-height: 350px;
 }
 
 .fade-enter,
@@ -71,13 +81,12 @@ img {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 25%;
+  top: 45%;
   width: auto;
   padding: 16px;
   color: $second-text-color;
   font-weight: bold;
   font-size: 18px;
-  border-radius: 0 4px 4px 0;
   text-decoration: none;
   user-select: none;
   transform: rotateZ(90deg);
@@ -85,19 +94,32 @@ img {
 }
 
 .next {
-  right: 0;
-  border-radius: 0 0 50 50;
+  right: 0%!important;
+  border-radius: 0 0 50% 50%!important;
 }
 
 .prev {
-  left: 0;
-  border-radius: 50 50 0 0s;
+  left: 0%!important;
+  border-radius: 50% 50% 0 0!important;
 }
 
-img{
+.sfondo{
     filter: invert(100%);
     height: 200px;
     width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
+.z_index{
+    z-index:999;
+    height: 250px;
+    width:auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 </style>

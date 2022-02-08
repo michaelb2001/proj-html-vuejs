@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <Header :arrayPassato="sliderImg1" />
+      <Header :arrayPassato="sliderImg1" 
+              :arrayPizzaPassato="sliderImg1Pizza" />
   </div>
 </template>
 
@@ -19,6 +20,12 @@ export default {
         require('./assets/img/h3-rev-img-1.png'),
         require('./assets/img/h3-rev-img-3.png'),
         require('./assets/img/h3-rev-img-5.png')
+      ],
+
+      sliderImg1Pizza:[
+          require('./assets/img/h3-rev-img-2.png'),
+          require('./assets/img/h3-rev-img-4.png'),
+          require('./assets/img/h3-rev-img-6.png')
       ]
     }
   }
