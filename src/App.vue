@@ -3,7 +3,8 @@
       <Header :arrayPassato="sliderImg1" 
               :arrayPizzaPassato="sliderImg1Pizza" />
               
-      <Main :arrayImgCartePassato="imgCarte" />
+      <Main :arrayImgCartePassato="imgCarte" 
+              :arrayPerSecondoSlider="captions"/>
   </div>
 </template>
 
@@ -37,6 +38,21 @@ export default {
         require('./assets/img/h3-img-2.jpg'),
         require('./assets/img/h3-img-3.jpg'),
         require('./assets/img/h3-img-4.jpg'),
+      ],
+
+      captions:[
+        {
+          motto:' "FORGET THE TRENDY PIZZA SHOPS , THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES" ',
+          sub_motto:'Washinghton post 2018'
+        },
+        {
+          motto:' "FORGET THE TRENDY PIZZA SHOPS , THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES" ',
+          sub_motto:'Washinghton post 2018'
+        },
+        {
+          motto:' "FORGET THE TRENDY PIZZA SHOPS , THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES" ',
+          sub_motto:'Washinghton post 2018'
+        }
       ]
 
     }
