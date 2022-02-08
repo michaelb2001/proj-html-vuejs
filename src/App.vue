@@ -2,7 +2,7 @@
   <div id="app">
       <Header :arrayPassato="sliderImg1" 
               :arrayPizzaPassato="sliderImg1Pizza" />
-      <Main />
+      <Main :arrayImgCartePassato="imgCarte"/>
   </div>
 </template>
 
@@ -29,6 +29,14 @@ export default {
           require('./assets/img/h3-rev-img-2.png'),
           require('./assets/img/h3-rev-img-4.png'),
           require('./assets/img/h3-rev-img-6.png')
+      ],
+
+      imgCarte:[
+        require('./assets/img/h3-img-1.jpg'),
+        require('./assets/img/h3-img-2.jpg'),
+        require('./assets/img/h3-img-3.jpg'),
+        require('./assets/img/h3-img-4.jpg'),
+
       ]
     }
   }
@@ -37,5 +45,7 @@ export default {
 
 <style lang="scss">
 @import './assets/style/global.scss';
-
+#app{
+  overflow: hidden;
+}
 </style>

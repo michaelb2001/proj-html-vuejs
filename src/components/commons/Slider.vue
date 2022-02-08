@@ -96,7 +96,7 @@ img {
 }
 
 .next {
-  right: -1%!important;
+  right: -10px!important;
   border-radius: 0 0 50% 50%!important;
 }
 
@@ -120,8 +120,8 @@ img {
     height: 250px;
     width:auto;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-35%);
 }
 </style>
