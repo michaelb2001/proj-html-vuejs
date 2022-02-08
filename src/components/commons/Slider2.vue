@@ -1,0 +1,125 @@
+<template>
+<div class="container-fluid">
+ <div>
+    <transition-group name="fade" tag="div">
+      <div v-for="i in caption" :key="i.id" class="d-flex align-items-center justify-content-center rtext">
+            <h3>{{i.caption}}</h3>
+            <p>{{i.sub_title}}</p>
+      </div>
+    </transition-group>
+    <a class="prev" @click="prev" href="#">Pre</a>
+    <a class="next" @click="next" href="#"> Next</a>
+  </div>
+</div>
+ 
+</template>
+
+<script>
+export default {
+  name: "Slider2",
+  props: {
+      caption:Array
+  },
+  data() {
+    return {
+      timer: null,
+      currentIndex: 0,
+      
+    };
+  },
+
+  mounted: function() {
+    this.startSlide();
+  },
+
+  methods: {
+    startSlide: function() {
+      this.timer = setInterval(this.next, 4000);
+    },
+
+    next: function() {
+      this.currentIndex += 1;
+    },
+    prev: function() {
+      this.currentIndex -= 1;
+    }
+  },
+
+  computed: {
+    currentImg: function() {
+      return this.caption[Math.abs(this.currentIndex) % this.caption.length];
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+@import '../../assets/style/vars.scss';
+.container-fluid{
+    background-color: $header-color;
+    min-height: 350px;
+    background-image: url("../../assets/img/h3-testimonials-bckgrnd.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
+}
+
+img {
+  height:600px;
+  width:100%
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  padding: 16px;
+  color: $second-text-color;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  user-select: none;
+  transform: rotateZ(90deg);
+  background-color: $header-text-color;
+  width: 80px;
+  text-align: center;
+}
+
+.next {
+  right: -10px!important;
+  border-radius: 0 0 50% 50%!important;
+}
+
+.prev {
+  left: -1%!important;
+  border-radius: 50% 50% 0 0!important;
+}
+
+.sfondo{
+    filter: invert(100%);
+    height: 200px;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.z_index{
+    z-index:999;
+    height: 250px;
+    width:auto;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-35%);
+}
+</style>

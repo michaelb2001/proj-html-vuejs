@@ -2,7 +2,8 @@
   <div id="app">
       <Header :arrayPassato="sliderImg1" 
               :arrayPizzaPassato="sliderImg1Pizza" />
-      <Main :arrayImgCartePassato="imgCarte"/>
+              
+      <Main :arrayImgCartePassato="imgCarte" />
   </div>
 </template>
 
@@ -36,8 +37,8 @@ export default {
         require('./assets/img/h3-img-2.jpg'),
         require('./assets/img/h3-img-3.jpg'),
         require('./assets/img/h3-img-4.jpg'),
-
       ]
+
     }
   }
 }
