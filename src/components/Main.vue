@@ -5,6 +5,8 @@
       <Pizzaspecial />
       <ImgBgMista />
       <Persone />
+      <Sponsor />
+      <Pizze />
   </div>
 </template>
 
@@ -14,6 +16,8 @@ import Slider2 from './commons/Slider2.vue';
 import Pizzaspecial from './commons/Pizzaspecial.vue';
 import ImgBgMista from './commons/ImgBgMista.vue';
 import Persone from './commons/Persone.vue';
+import Sponsor from './commons/Sponsor.vue';
+import Pizze from './commons/Pizze.vue';
 
 export default {
     name: "Main",
@@ -22,7 +26,9 @@ export default {
       Slider2,
       Pizzaspecial,
       ImgBgMista,
-      Persone
+      Persone,
+      Sponsor,
+      Pizze
 
     },
     props:{
@@ -35,6 +41,6 @@ export default {
 <style lang="scss" scoped>
 .container-fluid{
     padding: 0%!important;
-    margin: 0%!important;
+    margin: 0%;
 }
 </style>

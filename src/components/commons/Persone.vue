@@ -31,6 +31,7 @@ export default {
 @import '../../assets/style/vars.scss';
 .container-fluid{
     margin: 0%!important;
+    margin-top:10px!important ;
     padding: 0%!important;
     min-height: 400px;
     position: relative;
