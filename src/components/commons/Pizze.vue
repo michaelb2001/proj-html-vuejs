@@ -15,6 +15,10 @@
         v-for="(element,index) in listaPizze" :key="index">
             <img :src="element.img" :alt="element.nome" >
             <p class="nome_pizza">{{element.nome}}</p>
+
+            <div v-if="element.nome == 'valdostana' " class="sold">
+                SOLD
+            </div>
         </div>
     </div>
 
@@ -101,5 +105,18 @@ h5,.nome_pizza{
     width: 28px;
     height: 33px;
     fill: $header-text-color!important;
+}
+.col-2{
+    position: relative;
+}
+.sold{
+    padding: 5px;
+    color: $header-text-color;
+    background-color: $third-text-color;
+    border-radius:50%;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 </style>
