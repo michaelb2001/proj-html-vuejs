@@ -41,7 +41,7 @@ export default {
             object-fit: contain;
         }
     }
-
+    
     .pizzetta{
     position: absolute;
     right: 30px;
@@ -50,7 +50,6 @@ export default {
     border-radius: 50%;
     padding: 5px;
     fill: $second-text-color;
-    z-index: 999;
 }
 }
 </style>
