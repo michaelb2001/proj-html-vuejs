@@ -4,6 +4,7 @@
       <Slider2 :caption="arrayPerSecondoSlider"/>
       <Pizzaspecial />
       <ImgBgMista />
+      <Persone />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Carte from './commons/Carte.vue';
 import Slider2 from './commons/Slider2.vue';
 import Pizzaspecial from './commons/Pizzaspecial.vue';
 import ImgBgMista from './commons/ImgBgMista.vue';
+import Persone from './commons/Persone.vue';
 
 export default {
     name: "Main",
@@ -19,7 +21,8 @@ export default {
       Carte,
       Slider2,
       Pizzaspecial,
-      ImgBgMista
+      ImgBgMista,
+      Persone
 
     },
     props:{
