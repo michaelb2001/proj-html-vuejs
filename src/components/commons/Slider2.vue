@@ -2,9 +2,10 @@
 <div class="container-fluid">
  <div>
     <transition-group name="fade" tag="div">
-      <div v-for="(i,index) in caption" :key="index" class="motto d-flex flex-column align-items-center justify-content-center rtext">
-            <h3>{{i[this.currentIndex].motto}}</h3>
-            <p>{{i[this.currentIndex].sub_motto}}</p>
+      <div v-for="(i,index) in caption" :key="index" 
+      class="motto d-flex flex-column align-items-center justify-content-center text-center">
+            <h3>{{currentMotto}}</h3>
+            <p>{{currentSubMotto}}</p>
       </div>
     </transition-group>
     <a class="prev" @click="prev" href="#">Pre</a>
@@ -12,6 +13,8 @@
 
     
   </div>
+
+  <img src="../../assets/img/svg/svg-4.svg" class="pizzetta">
 </div>
  
 </template>
@@ -48,8 +51,11 @@ export default {
   },
 
   computed: {
-    currentImg: function() {
-      return this.caption[Math.abs(this.currentIndex) % this.caption.length];
+    currentMotto: function() {
+      return this.caption[Math.abs(this.currentIndex) % this.caption.length].motto;
+    },
+    currentSubMotto: function() {
+      return this.caption[Math.abs(this.currentIndex) % this.caption.length].sub_motto;
     }
   }
 };
@@ -123,5 +129,15 @@ export default {
     top: 35%;
     left: 50%;
     transform: translate(-50%,-35%);
+}
+
+.pizzetta{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background-color: $header-text-color;
+    border-radius: 50%;
+    padding: 5px;
+    fill: $second-text-color;
 }
 </style>

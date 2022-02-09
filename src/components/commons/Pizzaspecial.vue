@@ -49,6 +49,8 @@
 
           </div>
       </div>
+
+      <img src="../../assets/img/svg/svg-4.svg" class="pizzetta">
   </div>
 </template>
 
@@ -64,6 +66,7 @@ export default {
 .container-fluid{
     padding: 0%!important;
     margin: 0%!important;
+    position: relative;
 }
 
 .col-6{
@@ -88,5 +91,15 @@ export default {
             color: $third-text-color;
         }
     }
+}
+
+.pizzetta{
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background-color: $header-text-color;
+    border-radius: 50%;
+    padding: 5px;
+    fill: $second-text-color;
 }
 </style>
