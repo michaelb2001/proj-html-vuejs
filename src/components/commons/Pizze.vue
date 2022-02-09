@@ -64,7 +64,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/style/vars.scss';
-
+.container-fluid{
+    position: relative;
+}
 img{
     width: 150px;
     height: 150px;
@@ -91,12 +93,13 @@ h5,.nome_pizza{
 
 .cerchiolino{
     position: absolute;
-    right: 10px;
+    right: 0px;
     bottom: 0px;
     background-color: $third-text-color;
     padding: 5px;
     fill: $second-text-color;
     width: 28px;
     height: 33px;
+    fill: $header-text-color!important;
 }
 </style>
