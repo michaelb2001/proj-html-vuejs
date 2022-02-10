@@ -47,11 +47,11 @@ export default {
         },
         {
           motto:' "FORGET THE TRENDY PIZZA SHOPS , THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES" ',
-          sub_motto:'Washinghton post 2018'
+          sub_motto:'Washinghton post 2019'
         },
         {
           motto:' "FORGET THE TRENDY PIZZA SHOPS , THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES" ',
-          sub_motto:'Washinghton post 2018'
+          sub_motto:'Washinghton post 2020'
         }
       ]
 

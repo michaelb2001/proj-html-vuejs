@@ -16,7 +16,7 @@
             <img :src="element.img" :alt="element.nome" >
             <p class="nome_pizza">{{element.nome}}</p>
 
-            <div v-if="element.nome == 'valdostana' " class="sold">
+            <div v-if="element.sold" class="sold">
                 SOLD
             </div>
         </div>
@@ -34,27 +34,33 @@ export default {
             listaPizze:[
                 {
                     nome: "bismark",
-                    img:require("../../assets/img/h3-product-img-1a-100x100.png")
+                    img:require("../../assets/img/h3-product-img-1a-100x100.png"),
+                    sold:false
                 },
                 {
                     nome: "fiori di zucca",
-                    img:require("../../assets/img/h3-product-img-2a-150x150.png")
+                    img:require("../../assets/img/h3-product-img-2a-150x150.png"),
+                    sold:false
                 },
                 {
                     nome: "valdostana",
-                    img:require("../../assets/img/h3-product-img-3a-150x150.png")
+                    img:require("../../assets/img/h3-product-img-3a-150x150.png"),
+                    sold:true
                 },
                 {
                     nome: "pizza tartufata",
-                    img:require("../../assets/img/h3-product-img-4a-150x150.png")
+                    img:require("../../assets/img/h3-product-img-4a-150x150.png"),
+                    sold:false
                 },
                 {
                     nome: "francescana",
-                    img:require("../../assets/img/h3-product-img-5a-150x150.png")
+                    img:require("../../assets/img/h3-product-img-5a-150x150.png"),
+                    sold:false
                 },
                 {
                     nome: "campagnola",
-                    img:require("../../assets/img/h3-product-img-6a-100x100.png")
+                    img:require("../../assets/img/h3-product-img-6a-100x100.png"),
+                    sold:false
                 }
                 
                 

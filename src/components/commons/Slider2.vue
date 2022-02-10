@@ -1,17 +1,17 @@
 <template>
-<div class="container-fluid">
+<div class="container-fluid d-flex justify-content-center align-items-center text-center p-5">
  <div>
-    <transition-group name="fade" tag="div">
-      <div v-for="(i,index) in caption" :key="index" 
-      class="motto d-flex flex-column align-items-center justify-content-center text-center">
-            <h3>{{currentMotto}}</h3>
-            <p>{{currentSubMotto}}</p>
+    <transition-group name="wave" tag="div">
+      <div v-for="(element,index) in caption" :key="index" class="item hidden text-center p-5" 
+        :class="{active : isActive(index) }">
+      <div>
+            <h3>{{element.motto}}</h3>
+            <p>{{element.sub_motto}}</p>
+        </div>
       </div>
     </transition-group>
-    <a class="prev" @click="prev" href="#">Pre</a>
-    <a class="next" @click="next" href="#"> Next</a>
-
-    
+    <a class="prev" @click.prevent="prev" href="#">Pre</a>
+    <a class="next" @click.prevent="next" href="#"> Next</a>
   </div>
 
   <img src="../../assets/img/svg/svg-4.svg" class="pizzetta">
@@ -23,13 +23,12 @@
 export default {
   name: "Slider2",
   props: {
-      caption:Array
+      caption: Array
   },
-  data() {
+data() {
     return {
       timer: null,
-      currentIndex: 0,
-      
+      currentIndex: 0
     };
   },
 
@@ -44,18 +43,21 @@ export default {
 
     next: function() {
       this.currentIndex += 1;
+      console.log(this.currentIndex);
+      if(this.currentIndex == this.caption.length){
+        this.currentIndex = 0;
+      }
+      
     },
     prev: function() {
       this.currentIndex -= 1;
-    }
-  },
-
-  computed: {
-    currentMotto: function() {
-      return this.caption[Math.abs(this.currentIndex) % this.caption.length].motto;
+       console.log(this.currentIndex);
+      if(this.currentIndex == 0){
+        this.currentIndex = this.caption.length-1;
+      }
     },
-    currentSubMotto: function() {
-      return this.caption[Math.abs(this.currentIndex) % this.caption.length].sub_motto;
+    isActive:function(indice){
+      return indice == this.currentIndex;
     }
   }
 };
@@ -72,16 +74,16 @@ export default {
     position: relative;
 }
 
-.fade-enter,
-.fade-leave-to {
+.wave-enter,
+.wave-leave-to {
   visibility: hidden;
   width:100%;
   opacity: 0;
 }
 
 .motto{
-  height:600px;
-  width:100%
+  width:100%;
+  display: none;
 }
 
 .prev, .next {
@@ -139,5 +141,13 @@ export default {
     border-radius: 50%;
     padding: 5px;
     fill: $second-text-color;
+}
+.hidden{
+  display: none!important;
+}
+.active{
+  display: flex!important;
+  align-items:center!important;
+  justify-content: center!important;
 }
 </style>
